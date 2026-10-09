@@ -9,6 +9,6 @@ name = "myagentapp"
 version = "0.1.0"
 description = "Student Assistant Agent App"
 dependencies = [
-    "flet==0.21.2",
+    "flet>=0.23.0",
     "requests"
 ]
