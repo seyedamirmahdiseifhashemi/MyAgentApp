@@ -22,7 +22,6 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.22.x'
           channel: 'stable'
 
       - name: Set up Python
@@ -41,10 +40,11 @@ jobs:
 
       - name: Build APK with Flet
         run: |
-          flet build apk --verbose
+          yes | flet build apk --yes --no-interactive --verbose || flet build apk -y --verbose
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: app-release-apk
           path: build/apk/*.apk
+          if-no-files-found: warn
