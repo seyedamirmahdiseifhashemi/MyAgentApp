@@ -1,0 +1,14 @@
+[tool.flet]
+site_packages = true
+
+[tool.flet.app]
+path = "main.py"
+
+[project]
+name = "myagentapp"
+version = "0.1.0"
+description = "Student Assistant Agent App"
+dependencies = [
+    "flet==0.21.2",
+    "requests"
+]
